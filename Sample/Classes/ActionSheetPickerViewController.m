@@ -82,7 +82,10 @@
         NSLog(@"Block Picker Canceled");
     };
     NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
-    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    picker.tintColor = [UIColor greenColor];
+    [picker showActionSheetPicker];
 }
 
 - (IBAction)selectAnAnimal:(UIControl *)sender {
